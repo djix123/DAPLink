@@ -258,7 +258,7 @@ __STATIC_INLINE void PORT_SWD_SETUP(void)
     pin_out_init(SWDIO_OUT_PIN_PORT, SWDIO_OUT_PIN_Bit);
     SWDIO_OUT_PIN_PORT->BSRR = SWDIO_OUT_PIN;
 
-    pin_in_init(SWDIO_IN_PIN_PORT, SWDIO_IN_PIN_Bit, 1);
+    //pin_in_init(SWDIO_IN_PIN_PORT, SWDIO_IN_PIN_Bit, 1);
     // Set RESET HIGH
     pin_out_od_init(nRESET_PIN_PORT, nRESET_PIN_Bit);//TODO - fix reset logic
     nRESET_PIN_PORT->BSRR = nRESET_PIN;
@@ -362,8 +362,8 @@ called prior \ref PIN_SWDIO_IN function calls.
 */
 __STATIC_FORCEINLINE void PIN_SWDIO_OUT_DISABLE(void)
 {
-    pin_in_init(SWDIO_OUT_PIN_PORT, SWDIO_OUT_PIN_Bit, 0);
-    SWDIO_OUT_PIN_PORT->BSRR = SWDIO_OUT_PIN;
+    pin_in_init(SWDIO_OUT_PIN_PORT, SWDIO_OUT_PIN_Bit, 1);
+    //SWDIO_OUT_PIN_PORT->BSRR = SWDIO_OUT_PIN;
 }
 
 
