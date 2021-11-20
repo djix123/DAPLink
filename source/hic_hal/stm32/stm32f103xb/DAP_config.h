@@ -362,7 +362,7 @@ called prior \ref PIN_SWDIO_IN function calls.
 */
 __STATIC_FORCEINLINE void PIN_SWDIO_OUT_DISABLE(void)
 {
-    pin_in_init(SWDIO_OUT_PIN_PORT, SWDIO_OUT_PIN_Bit, 0);
+    pin_in_init(SWDIO_OUT_PIN_PORT, SWDIO_OUT_PIN_Bit, 1);
     SWDIO_OUT_PIN_PORT->BSRR = SWDIO_OUT_PIN;
 }
 
